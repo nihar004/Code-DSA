@@ -76,3 +76,19 @@ class StockSpanner {
         return count;
     }
 }
+
+
+Code Segment 1: Efficient Implementation
+In the first code example, two stacks (prices and spans) are used to store the prices of stocks and their corresponding spans. The next(int price) function is the core operation and determines the span of the stock price that was just added
+Time Complexity:
+
+The amortized time complexity for each call to next() is O(1), considering that each price is pushed and popped once.
+
+The worst-case time complexity for a single call can be O(n) in the scenario where all elements are popped from the stack, but this is balanced out by fewer operations in other calls.
+
+
+Code Segment 2: Inefficient Recursive Implementation
+
+Time Complexity:
+
+The worst-case time complexity for next() is O(n^2) where n is the number of elements in the stack. This complexity arises because each next() call can lead to a full traversal of the stack in the find() method, and this traversal is repeated for each element added.
